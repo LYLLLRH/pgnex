@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin:0;
+			padding: 0;
+		}
+
+		.container {
+			width:100px;
+			height: 100px;
+			background: #ccc;
+			overflow: hidden;
+		}
+
+		.main1	{
+			widows: 100px;
+			height: 100px;
+			background: #aaa;
+		}
+		
+		.main2	{
+			widows: 100px;
+			height: 100px;
+			background: #444;
+		}	
+
+		.vertical {
+			float: left;
+			width:25px;
+			list-style-type: none;
+		}
+
+		a {
+			text-decoration: none;
+			display: block;
+			background: #38f;
+			margin-right: 2px;
+			text-align: center;
+
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="container">
+	<div class="main1" id="1">1</div>
+	<div class="main2" id="2">2</div>	
+	<div class="main1" id="3">3</div>	
+	<div class="main2" id="4">4</div>	
+	</div>
+	<div>
+		<ul>
+			<li class="vertical"><a href = "#1">1</a></li>
+			<li class="vertical"><a href = "#2">2</a></li>
+			<li class="vertical"><a href = "#3">3</a></li>
+			<li class="vertical"><a href = "#4">4</a></li>
+		</ul>
+
+	</div>
+</body>
+</html>
