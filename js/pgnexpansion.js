@@ -5,6 +5,11 @@ var regBoardCell = /\[%position\s+([a-h][1-8]):([rgb])\]/;
 
 // refresh board/highlight select
 // get cursor -> fen -> boardcell -> line
+function nagConvert (nag) {
+    var nagArray = {"$1":"!","$2":"?","$3":"!!","$4":"??","$5":"!?","$6":"?!"};
+    return (nagArray[nag] || "");
+}
+
 function boardRefresh(board, $board, moves, obj) {
     var theObj = obj.slice(0);
     lineCells = obj2LineBoard(moves, obj);
@@ -113,7 +118,7 @@ function obj2Html(theObj, number) {
 						break;
                     case "nag":
                         for (var j = 0; j < move[p].length; j++) {
-                            nagStr += move[p][j]; 
+                            nagStr += nagConvert( move[p][j]); 
                         }
                         seq = false;
                         break;
@@ -189,7 +194,7 @@ function obj2PgnStandard(theObj, number) {
 						break;
                     case "nag":
                         for (var j = 0; j < move[p].length; j++) {
-                            nagStr += move[p][j]; 
+                            nagStr += nagConvert(move[p][j]); 
                         }
                         seq = false;
                         break;
@@ -261,7 +266,7 @@ function obj2Pgn(theObj, number) {
                         break;
                     case "nag":
                         for (var j = 0; j < move[p].length; j++) {
-                            nagStr += move[p][j]; //document.write("<br>"+retStr);
+                            nagStr += nagConvert(move[p][j]); //document.write("<br>"+retStr);
                         }
                         break;
                     case "fen":
