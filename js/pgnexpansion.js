@@ -36,7 +36,12 @@ function boardRefresh(board, $board, moves, obj) {
 
         }
     }
+    var mm = obj2MM(moves,obj);
+    if (mm){
 
+       $board.find(".board-b72b1").find(".square-" + mm.from).addClass("posHighlight").addClass("posHighlight_" + 'g');
+       $board.find(".board-b72b1").find(".square-" + mm.to).addClass("posHighlight").addClass("posHighlight_" + 'g');
+    }
 }
 
 // cursor function start
@@ -317,6 +322,20 @@ function obj2Fen(moves, cursorCur) {
             return obj2Fen(moves[cursor.shift() - 1]["rav"][cursor.shift() - 1], cursor);
         } else {
             return obj2Fen(moves[cursor.shift() - 1], cursor);
+        }
+    }
+}
+
+function obj2MM(moves, cursorCur) {
+    var move;
+    var cursor = cursorCur.slice(0);
+    if (cursor.length == 1) {
+        return cursor[0] == 0 ? null : moves[cursor[0] - 1]["mm"];
+    } else {
+        if (moves[cursor[0] - 1]["rav"]) {
+            return obj2MM(moves[cursor.shift() - 1]["rav"][cursor.shift() - 1], cursor);
+        } else {
+            return obj2MM(moves[cursor.shift() - 1], cursor);
         }
     }
 }
