@@ -376,7 +376,7 @@ $(document).ready(function() {
 			chessRefresh(chess,obj2Fen(moves,cursorCur));
 			pgnHilightChange($aa,cursorCur,1)
 		});
-		initialStatus(obj2Pgn(moves));
+		initialStat:us(obj2Pgn(moves));
 		boardRefresh(board,$aa,moves,cursorCur);
 		chessRefresh(chess,obj2Fen(moves,cursorCur));
 		pgnHilightChange($aa,cursorCur,1);
@@ -764,7 +764,7 @@ $(document).ready(function() {
 				ply.fen = chess.fen();
 				var mm = chess.history({verbose:true}).pop();
 				ply.mm = {'from':mm.from || '','to':mm.to || ''};
-				console.log(ply.mm);
+				// console.log(ply.mm);
 			});
 
 			objAddOids(moves);

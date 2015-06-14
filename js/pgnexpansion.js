@@ -8,6 +8,7 @@ var regBoardCell = /\[%position\s+([a-h][1-8]):([rgb])\]/;
 function nagConvert (nag) {
     var nagArray = {"$1":"!","$2":"?","$3":"!!","$4":"??","$5":"!?","$6":"?!"};
     return (nagArray[nag] || "");
+    // return nag;
 }
 
 function boardRefresh(board, $board, moves, obj) {
@@ -120,7 +121,7 @@ function obj2Html(theObj, number) {
                         for (var j = 0; j < move[p].length; j++) {
                             nagStr += nagConvert( move[p][j]); 
                         }
-                        seq = false;
+                        seq = nagStr == ''? true:false;
                         break;
                     case "fen":
                     case "point":
@@ -196,7 +197,7 @@ function obj2PgnStandard(theObj, number) {
                         for (var j = 0; j < move[p].length; j++) {
                             nagStr += nagConvert(move[p][j]); 
                         }
-                        seq = false;
+                        seq = nagStr == ''? true:false;
                         break;
                     case "fen":
                     case "point":
