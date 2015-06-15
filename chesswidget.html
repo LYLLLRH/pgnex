@@ -42,14 +42,14 @@
 				width: 562px;
 				height: 449px;
 				position: relative;
-				
+
 			}
 
 			.gamehead {
 				width: 562px;
 				height: 54px;
 				background: #f3f3f3
-				
+
 			}
 
 			.gameuser {
@@ -78,15 +78,15 @@
 				margin-left: -5px;
 				float: right;
 				border-right: 2px solid #f3f3f3;
-				
+
 			}
 			.moving{
 				width:562px;
 				height: 35px;
 				background: #f3f3f3
-				
+
 			}
-			
+
 			.movingleft{
 				width: 360px;
 				height: 35px;
@@ -182,7 +182,7 @@
 			<div id="movesPop" tabindex="-1">
 			</div>
 		</div>
-		
+
 		<script type="text/javascript">
 			$(document).ready(function() {
 				var cfg = {
@@ -253,7 +253,7 @@ pgnHilightChange($aa,cursorCur,1)
     	if ( autoMove) { 
     		clearTimer();}
     		else {autoPlay()};
-    		
+
     	});
 
     $("#pgnflip").click(function(event) {
@@ -331,7 +331,7 @@ function stepFoward() {
 		$("#movesPop").find(".selected").removeClass("selected");
 		$("#movesPop").find("#m"+this.id.split("m")[1]).addClass("selected");
 	});
-	$(".moveUl").on("dblclick",function(){
+	$(".moveUl").on("click",function(){
 		$("#movesPop").find(".selected").removeClass("selected");
 		$("#movesPop").find("#m"+this.id.split("m")[1]).addClass("selected");
 		$.magnificPopup.close();
@@ -390,7 +390,7 @@ function stepBack() {
 };
 
 $("#pgnArea").on('keydown', function(e) {
-	
+
 	e.preventDefault();
         if (e.keyCode == 39) { //right arrow
         	clearTimer();
@@ -418,7 +418,7 @@ $("#movesPop").on('keydown', function(e) {
  	$("#movesPop").find("#m"+num).removeClass("selected");
  	$("#movesPop").find("#m"+(num-1)).addClass("selected");
  }
- 
+
         } else if (e.keyCode === 40) { //down
  //          downList();
  //			getselecteditem => id number, if not last ,movedown
